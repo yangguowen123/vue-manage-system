@@ -8,11 +8,11 @@ body{
 }
 .header-info{
     width:90%;
+    font-size: 16px;
     margin: .2rem auto 0px;
 }
 
 .header-info a{
-    height:.38rem;
     display: block;
 }
 .header-info a img{
@@ -22,7 +22,6 @@ body{
     margin-top: .03rem;
 }
 .header-info a.reg{
-    font-size:.32rem;
     font-weight:500;
     color:rgba(51,51,51,1);
 }

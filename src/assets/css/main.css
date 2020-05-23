@@ -25,7 +25,7 @@ a {
     position: absolute;
     left: 250px;
     right: 0;
-    top: 70px;
+    top: 105px;
     bottom: 0;
     padding-bottom: 30px;
     -webkit-transition: left .3s ease-in-out;
@@ -174,4 +174,18 @@ a {
 
 .v-note-wrapper .v-note-panel {
     min-height: 500px;
+}
+
+/*button*/
+.btn-success {
+    background: #007AFF;
+    border: none;
+}
+
+.btn-success:not(:disabled):not(.disabled).active,
+.btn-success:not(:disabled):not(.disabled):active,
+.show>.btn-success.dropdown-toggle,
+.btn-success:hover {
+    background: #3395ff;
+    border: none;
 }

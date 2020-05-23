@@ -226,6 +226,14 @@ export default {
 
 
 			editGatheringCode.gatheringChannelId = selectedGatheringChannel.channelId;
+			// todo删除
+			$('.gathering-code-pic').on('filepreupload', function(event, data, previewId, index) {
+				var form = data.form, files = data.files, extra = data.extra,
+					response = data.response, reader = data.reader;
+				console.log('File pre upload triggered', event, data, previewId, index);
+			  });
+			that.addOrUpdateGatheringCodeInner();
+			// todo删除
 			if (selectedGatheringChannel.channelCode == 'bankCard') {
 				if (editGatheringCode.payee == null || editGatheringCode.payee == '') {
 					layer.alert('请选择收款人', {

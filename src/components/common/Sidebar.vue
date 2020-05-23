@@ -4,8 +4,9 @@
             class="sidebar-el-menu"
             :default-active="onRoutes"
             :collapse="collapse"
-            background-color="#324157"
-            text-color="#bfcbd9"
+            :collapse-transition="true"
+            background-color="#16232D"
+            text-color="#FFFFFF"
             active-text-color="#20a0ff"
             unique-opened
             router
@@ -22,6 +23,7 @@
                                 v-if="subItem.subs"
                                 :index="subItem.index"
                                 :key="subItem.index"
+                                popper-class="menu-item"
                             >
                                 <template slot="title">{{ subItem.title }}</template>
                                 <el-menu-item
@@ -34,7 +36,10 @@
                                 v-else
                                 :index="subItem.index"
                                 :key="subItem.index"
-                            >{{ subItem.title }}</el-menu-item>
+                            >
+                                <i :class="subItem.icon"></i>
+                                <span>{{ subItem.title }}</span>
+                            </el-menu-item>
                         </template>
                     </el-submenu>
                 </template>
@@ -151,41 +156,41 @@ export default {
                 //     title: '支持作者'
                 // },
                 //// order---------
-                // {
-                //     icon: 'el-icon-lx-global',
-                //     index: 'receive-order',
-                //     title: '接单'
-                // },
-                // {
-                //     icon: 'el-icon-lx-global',
-                //     index: 'audit-order',
-                //     title: '审核'
-                // },
                 {
-                    icon: 'el-icon-rank',
+                    icon: 'el-icon-s-claim',
+                    index: 'receive-order',
+                    title: '接单'
+                },
+                {
+                    icon: 'el-icon-s-check',
+                    index: 'audit-order',
+                    title: '审核'
+                },
+                {
+                    icon: 'el-icon-user-solid',
                     index: '8',
                     title: '我的功能',
                     subs: [
                         {
                             index: 'recharge',
+                            icon: 'el-icon-top',
                             title: '充值',
                         },
                         {
                             index: 'withdraw',
+                            icon: 'el-icon-bottom',
                             title: '提现'
                         },
                         {
                             index: 'gathering-code',
+                            icon: 'el-icon-full-screen',
                             title: '收款码'
                         },
                         {
                             index: 'realname-certification',
+                            icon: 'el-icon-s-custom',
                             title: '实名认证'
                         },
-                        // {
-                        //     index: 'personal-info',
-                        //     title: '个人中心'
-                        // },
                         // {
                         //     index: 'dialog',
                         //     title: '收款码'

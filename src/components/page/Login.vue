@@ -31,11 +31,10 @@
         <div class="login-wrap">
             <div class="ms-login">
                 <div class="header-info">
-                    <a href="#" class="fl"></a>
-                    <a href="#" class="fr reg"  v-on:click="window.location.href = '/register'">注册</a>
+                    <span>登录</span>
+                    <a href="javascript:void(0)" class="fr reg"  v-on:click="$router.push('/register')">注册</a>
                     <div class="clearfix"></div>
                 </div>
-                <h3>登录</h3>
                 <div class="ms-title">欢迎使用{{websiteTitle}}</div>
                 <el-form :model="param" :rules="rules" ref="login" label-width="0px" class="ms-content">
                     <el-form-item prop="userName">
@@ -109,6 +108,7 @@ export default{
                 that.websiteTitle = res.data.websiteTitle;
                 that.memberMeEnabled = res.data.memberMeEnabled;
                 that.mobileLoginGoogleAuth = res.data.mobileLoginGoogleAuth;
+                localStorage.setItem('ms_website_title', that.websiteTitle);
             });
         },
 

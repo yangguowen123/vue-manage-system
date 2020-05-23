@@ -13,6 +13,11 @@ export default new Router({
             redirect: '/dashboard'
         },
         {
+            path: '/register',
+            component: () => import(/* webpackChunkName: "dashboard" */ '../components/page/Register.vue'),
+            meta: { title: '注册' }
+        },
+        {
             path: '/',
             component: () => import(/* webpackChunkName: "home" */ '../components/common/Home.vue'),
             meta: { title: '自述文件' },
