@@ -1,16 +1,24 @@
 import Vue from 'vue';
 import App from './App.vue';
 import router from './router';
+import bus from './components/common/bus';
+import request from './utils/request';
 import ElementUI from 'element-ui';
 import VueI18n from 'vue-i18n';
 import { messages } from './components/common/i18n';
 import 'element-ui/lib/theme-chalk/index.css'; // 默认主题
 // import './assets/css/theme-green/index.css'; // 浅绿色主题
+import './assets/css/common.css';
 import './assets/css/icon.css';
+import './assets/css/base.css';
+import './assets/css/style.css';
 import './components/common/directives';
 import 'babel-polyfill';
+import './components/common/common';
 
 Vue.config.productionTip = false;
+Vue.prototype.$bus = bus;
+Vue.prototype.$http = request;
 Vue.use(VueI18n);
 Vue.use(ElementUI, {
     size: 'small'

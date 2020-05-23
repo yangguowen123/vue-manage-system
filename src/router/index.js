@@ -1,5 +1,8 @@
 import Vue from 'vue';
 import Router from 'vue-router';
+import mineRoute from './mine';
+import receiveOrderRoute from './receiveOrder';
+import auditOrderRoute from './auditOrder';
 
 Vue.use(Router);
 
@@ -14,6 +17,9 @@ export default new Router({
             component: () => import(/* webpackChunkName: "home" */ '../components/common/Home.vue'),
             meta: { title: '自述文件' },
             children: [
+                ...mineRoute,
+                ...receiveOrderRoute,
+                ...auditOrderRoute,
                 {
                     path: '/dashboard',
                     component: () => import(/* webpackChunkName: "dashboard" */ '../components/page/Dashboard.vue'),
